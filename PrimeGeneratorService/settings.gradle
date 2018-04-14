@@ -1,0 +1,4 @@
+include ':PrimeNumberGenerator'
+project(':PrimeNumberGenerator').projectDir = file('../PrimeNumberGenerator')
+
+rootProject.name = 'PrimeGeneratorService'

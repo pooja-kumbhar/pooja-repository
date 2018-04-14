@@ -1,0 +1,10 @@
+CREATE TABLE prime_tbl (
+   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+   start_range BIGINT NOT NULL,
+   end_range BIGINT NOT NULL,
+   algorithm_used VARCHAR(50),
+   result LONGTEXT NOT NULL,
+   count INT NOT NULL,
+   time_elapsed BIGINT NOT NULL,
+   stamp TIMESTAMP
+);
