@@ -10,8 +10,10 @@ import org.slf4j.LoggerFactory;
 import com.prime.beans.PrimeBean;
 
 /**
+ * This algorithm is use to get the list of prime numbers using Sieve of
+ * Eratosthenes.
  * 
- * @author Pooja
+ * @author Pooja Kumbhar
  * @see <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Wikipedia
  *      article on Sieve of Eratosthenes</a>
  */
@@ -20,7 +22,7 @@ public class ModeratePrimeGenerator {
 	private static final Logger logger = LoggerFactory.getLogger(ModeratePrimeGenerator.class);
 
 	public ArrayList<Long> primeNumberGenerator(long startRange, long endRange, String stratergy) throws SQLException {
-	
+		logger.info("Inside ModeratePrimeGenerator.... ");
 		boolean flag[] = new boolean[(int) (endRange + 1)];
 		ArrayList<Long> primeNumbers = new ArrayList<>();
 		Arrays.fill(flag, true);
@@ -39,6 +41,7 @@ public class ModeratePrimeGenerator {
 			}
 
 		}
+		logger.info("Prime numbers using ModeratePrimeGenerator: " + primeNumbers);
 		return primeNumbers;
 	}
 }

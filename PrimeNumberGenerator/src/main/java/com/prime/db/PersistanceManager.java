@@ -14,7 +14,9 @@ import com.prime.beans.PrimeBean;
 import com.prime.main.Main;
 
 /**
- * This class is for creating database connection,inserting rows in to database and to print the result.
+ * This class is for creating database connection,inserting rows in to database
+ * and to print the result.
+ * 
  * @author Pooja Kumbhar
  *
  */
@@ -28,17 +30,26 @@ public class PersistanceManager {
 		this.primeBean = primeBean;
 	}
 
+	/**
+	 * This method create the connection to the HSQLDB. It is using in memory
+	 * database
+	 */
 	public void createConnection() {
 		try {
 			Class.forName("org.hsqldb.jdbcDriver");
 			con = DriverManager.getConnection("jdbc:hsqldb:mem:testdb;sql.syntax_mys=true", "sa", "");
 			logger.info("Database connection establish sucessfully.");
 		} catch (Exception e) {
-			logger.error("ERROR: failed to load HSQLDB JDBC driver.",e.getMessage());
+			logger.error("ERROR: failed to load HSQLDB JDBC driver.", e.getMessage());
 			return;
 		}
 	}
 
+	/**
+	 * This method is use to insert the data to the table name prime_tbl.
+	 * 
+	 * @throws SQLException
+	 */
 	public void insert() throws SQLException {
 		PreparedStatement stmt = con.prepareStatement(
 				"insert into prime_tbl(start_range,end_range,algorithm_used,result,count, time_elapsed) values (?,?,?,?,?,?)");
@@ -52,6 +63,13 @@ public class PersistanceManager {
 		logger.info("Row inserted sucessfully.");
 	}
 
+	/**
+	 * This method is use to get data from table.
+	 * 
+	 * @param id
+	 * @return
+	 * @throws SQLException
+	 */
 	public PrimeBean getResult(int id) throws SQLException {
 		PreparedStatement stmt = con.prepareStatement("select * from prime_tbl where id =?");
 		stmt.setInt(1, id);
@@ -73,6 +91,12 @@ public class PersistanceManager {
 		return null;
 	}
 
+	/**
+	 * This method check for the table if already exists and if not then it
+	 * create the new table in database.
+	 * 
+	 * @throws SQLException
+	 */
 	public void store() throws SQLException {
 		createConnection();
 		con.createStatement()
@@ -85,6 +109,10 @@ public class PersistanceManager {
 		closeConnection();
 	}
 
+	/**
+	 * This method close the connection to the database.
+	 * @throws SQLException
+	 */
 	private void closeConnection() throws SQLException {
 		con.close();
 	}

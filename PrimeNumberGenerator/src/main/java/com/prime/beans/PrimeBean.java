@@ -1,8 +1,10 @@
 package com.prime.beans;
 
 import java.util.List;
+
 /**
  * This bean is use for representing prime numbers result.
+ * 
  * @author Pooja Kumbhar
  *
  */

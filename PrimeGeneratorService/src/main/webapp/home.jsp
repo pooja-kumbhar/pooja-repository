@@ -52,9 +52,9 @@ String url=request.getRequestURL().toString().substring(0,request.getRequestURL(
 </div>
 <div class="form-group">
 <select	class="form-control selectpicker" id="strategies" name="strategies" data-none-selected-text="">
-<option value="Strategy1">Strategy 1</option>
-<option value="Strategy2">Strategy 2</option>
-<option value="Strategy3">Strategy 3</option>
+<option value="Strategy1">Basic Algorithm</option>
+<option value="Strategy2">Sieve of Eratosthenes Algorithm</option>
+<option value="Strategy3">Segmented Sieve Algorithm</option>
 </select>
 </div>
 <div>

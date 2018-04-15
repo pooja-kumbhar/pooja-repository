@@ -17,11 +17,18 @@ import com.prime.util.calculation.ComplexPrimeGenerator;
 import com.prime.util.calculation.ModeratePrimeGenerator;
 import com.prime.util.calculation.SimplePrimeGenerator;
 
+/**
+ * This is a restful webservice for generating prime numbers. and uses
+ * PrimeNumberGenerator project for calculations.
+ * 
+ * @author Pooja
+ *
+ */
 @Path("/primeNumberService")
 public class PrimeNumberService {
 
 	private static final Logger logger = LoggerFactory.getLogger(PrimeNumberService.class);
-	
+
 	@GET
 	@Path("/{startRange}/{endRange}/{statergy}")
 	@Produces(javax.ws.rs.core.MediaType.TEXT_PLAIN)
@@ -33,7 +40,6 @@ public class PrimeNumberService {
 		long endTime;
 		PrimeBean bean = null;
 
-		
 		logger.info("\nProgram Input----------------------------------------------------------\nStart Range: "
 				+ startRange + "\nEnd Range: " + endRange + "\nStrategy :" + strategy);
 
@@ -47,7 +53,7 @@ public class PrimeNumberService {
 				new PersistanceManager(bean).store();
 				logger.info("Prime number bean", bean.toString());
 				break;
-				
+
 			case "Strategy2":
 				startTime = System.currentTimeMillis();
 				result = new ModeratePrimeGenerator().primeNumberGenerator(startRange, endRange, strategy);
@@ -56,7 +62,7 @@ public class PrimeNumberService {
 				new PersistanceManager(bean).store();
 				logger.info("Prime number bean", bean.toString());
 				break;
-				
+
 			case "Strategy3":
 				startTime = System.currentTimeMillis();
 				result = new ComplexPrimeGenerator().primeNumberGenerator(startRange, endRange, strategy);
