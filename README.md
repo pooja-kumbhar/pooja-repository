@@ -26,7 +26,7 @@ Execution of PrimeGeneratorService
 This application uses PrimeNumberGenerator application as its dependencies to reuse the functionalities. Dependency is added using gradle.This application needs to be deployed on application server. To generate war of this application use following command in the project directory.
 The PrimeGeneratorService.war will be generated inside build/libs/
 ```bash
-# Linux
+
 gradle clean build
 
 # windows:
@@ -49,5 +49,17 @@ Sample Output will look like following :
 ![Screenshot](output_screenshot.png)
 
 
-Execution of PrimeNumberGenerator -standalone
+Execution of PrimeNumberGenerator -Standalone
 ---------------------------------------------
+This is standalone application for the generation of prime numbers. To run this application use following command in the project directory.
+```bash
+
+gradle run -PappArgs="['1', '50','Strategy1']"
+
+```
+* Strategy1 uses Basic Algorithm.
+* Strategy2 uses Sieve of Eratosthenes Algorithm.
+* Strategy3 uses Segmented Sieve Algorithm.
+
+Sample Output will look like following :
+![Screenshot]()
