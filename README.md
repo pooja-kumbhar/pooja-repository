@@ -43,7 +43,7 @@ The application can be accessed using two methods :
 e.g. http://localhost:8080/PrimeGeneratorService/
 
 
-
+![Screenshot](screenshot.png)
 
 
 
