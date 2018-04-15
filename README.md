@@ -62,4 +62,5 @@ gradle run -PappArgs="['1', '50','Strategy1']"
 * Strategy3 uses Segmented Sieve Algorithm.
 
 Sample Output will look like following :
-![Screenshot]()
+
+![Screenshot](output_screenshot2.png)
