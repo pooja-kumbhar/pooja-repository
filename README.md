@@ -48,6 +48,11 @@ Sample Output will look like following :
 
 ![Screenshot](output_screenshot.png)
 
+To access rest service directly use following url format<br/>  http://hostname:port/PrimeGeneratorService/webapi/primeNumberService/{startRange}/{endRange}/{statergy}<br/>
+e.g.<br>
+* http://localhost:8080/PrimeGeneratorService/webapi/primeNumberService/1/10/Strategy1
+* http://localhost:8080/PrimeGeneratorService/webapi/primeNumberService/1/10/Strategy2
+* http://localhost:8080/PrimeGeneratorService/webapi/primeNumberService/1/10/Strategy3
 
 Execution of PrimeNumberGenerator -Standalone
 ---------------------------------------------
